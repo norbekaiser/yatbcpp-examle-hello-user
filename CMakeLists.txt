@@ -23,6 +23,8 @@ find_package(jsoncpp REQUIRED)
 find_package(Threads REQUIRED)
 find_package(yatbcpp REQUIRED)
 
+include_directories(yatbcpp)
+
 set(SOURCE_FILES main.cpp)
 add_executable(yatbcpp_hello_user ${SOURCE_FILES})
-target_link_libraries(yatbcpp_hello_user ${YATBCPP_LIBRARIES} jsoncpp ${CURL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(yatbcpp_hello_user yatbcpp jsoncpp ${CURL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})

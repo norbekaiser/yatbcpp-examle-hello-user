@@ -20,9 +20,9 @@ void update_callback(yatbcpp::Message M){
         message += "World";
     }
     auto gm = yatbcpp::getMe();
-    auto Usr = yatbcpp::getMe::perform_request(token,gm);
+    auto Usr = yatbcpp::getMe::perform_requestJSON(token,gm);
     sendMessage sendMessage(M.getChat(),message);
-    telegram_method<yatbcpp::Message>::perform_request(token,sendMessage);
+    telegram_methodJSON<yatbcpp::Message>::perform_requestJSON(token,sendMessage);
 
 }
 
